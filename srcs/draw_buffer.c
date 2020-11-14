@@ -25,11 +25,9 @@ void draw_buffer(t_game *game)
 				printf("Error : x  == %d y  == %d \n", x,y);
 				break;
 			}
-			game->img.data[index] = game->new_val.buffer[y][x];
+			game->img.data[index] = game->new_val.buffer[x][y];
 			x++;
 		}
-	
 		y++;
 	}
-	printf("x:%d    y:%d\n", x, y);
 }

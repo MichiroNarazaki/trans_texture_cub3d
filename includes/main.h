@@ -3,13 +3,10 @@
 #include <math.h>
 #include <string.h>
 #include <stdbool.h>
-
+#include <fcntl.h>
+#include <unistd.h>
 //place the example code below here:
 
-// #define screenWidth 640
-// #define screenHeight 480
-#define mapWidth 24
-#define mapHeight 24
 #define texWidth 64
 #define texHeight 64
 
@@ -66,16 +63,16 @@ typedef struct s_start_end
 
 typedef struct s_new_val
 {
-	t_start_end y;
 	int texNum;
 	double texPos;
 	double step;
 	int side;
 	// int texture[8][texHeight * texWidth];
-	int *texture;
+	int *texture[8];
 	// uint32_t buffer[screenWidth][screenHeight];
 	int buffer[WIDTH][HEIGHT];
 	int color;
+	double wallX;
 }t_new_val;
 
 typedef struct s_val
@@ -128,9 +125,9 @@ void	main_hook_init(t_game *game);
 /*new↓*/
 void buff(t_game *game,int w,int h);
 void draw_buffer(t_game *game);
-void get_texX(t_game *game, int *side,double *wallX);
-void get_wallX(t_game *game,int *side,double *perpWallDist,double *wallX);
-void y_tex(t_game *game,int x, int y);
-void get_texture(t_game *game);
+void get_texX(t_game *game, int *side);
+void get_wallX(t_game *game,int *side,double *perpWallDist);
+void y_tex(t_game *game,int x,t_start_end *y);
+void load_img(t_game *game);
 
 
