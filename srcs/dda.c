@@ -2,7 +2,7 @@
 
 void dda(t_val *val,int *side,int *hit)
 {
-	while (*hit == 0)
+	while (*hit == 0)//hitしない限り永遠ループ
 	{
 		//jump to next map square, OR in x-direction, OR in y-direction
 		if (val->side_dist.x < val->side_dist.y)

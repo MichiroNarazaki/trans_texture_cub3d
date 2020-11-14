@@ -6,7 +6,7 @@ void load_img(t_game *game)
 	t_img other_img;
 	int j;
 	int fd;
-	char *texture_name[8] = {"./xpm/bluestone.xpm", "./xpm/colorstone.xpm", "./xpm/eagle.xpm", "./xpm/greystone.xpm", "./xpm/mossy.xpm", "./xpm/purplestone.xpm", "./xpm/redbrick.xpm", "./xpm/wood.xpm"}; // "./xpm/new_xpm/barrel.xpm","./xpm/new_xpm/pillar.xpm",  "./xpm/new_xpm/greenlight.xpm",
+	char *texture_name[8] = {"./xpm/bluestone.xpm", "./xpm/colorstone.xpm", "./xpm/eagle.xpm", "./xpm/greystone.xpm", "./xpm/cat_2.xpm", "./xpm/purplestone.xpm", "./xpm/redbrick.xpm", "./xpm/wood.xpm"}; // "./xpm/new_xpm/barrel.xpm","./xpm/new_xpm/pillar.xpm",  "./xpm/new_xpm/greenlight.xpm",
 
 	j = 0;
 	while (texture_name[j])

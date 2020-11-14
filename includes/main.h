@@ -127,7 +127,8 @@ void buff(t_game *game,int w,int h);
 void draw_buffer(t_game *game);
 void get_texX(t_game *game, int *side);
 void get_wallX(t_game *game,int *side,double *perpWallDist);
-void y_tex(t_game *game,int x,t_start_end *y);
+// void y_tex(t_game *game,int x,t_start_end *y);
+void y_tex(t_game *game,int x,t_start_end *y,int *side);
 void load_img(t_game *game);
 
 

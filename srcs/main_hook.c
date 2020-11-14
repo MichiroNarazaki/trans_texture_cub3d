@@ -54,6 +54,7 @@ void main_hook(t_game *game)
 
 		/***************************************************************/
 		//Calculate height of line to draw on screen
+	//壁の高さ = ウィンドウの高さ / 距離
 		lineHeight = (int)(h / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
@@ -74,7 +75,7 @@ void main_hook(t_game *game)
 		get_texX(game, &side);
 		game->new_val.step = 1.0 * texHeight / lineHeight;
 		game->new_val.texPos = (y.start - h / 2 + lineHeight / 2) * game->new_val.step;
-		y_tex(game, x, &y);
+		y_tex(game, x, &y,&side);
 	}
 
 	frameTime = 0.1;
