@@ -5,8 +5,6 @@ int deal_key(int key_code, t_game *game)
 	double old_dirX;
 	double old_planeX;
 
-	// printf("x : %lf , ", game->val.pos.x);
-	// printf("y : %lf\n", game->val.pos.y);
 	if (key_code == KEY_ESC)
 		exit(0);
 	else if (key_code == KEY_W)
@@ -48,7 +46,5 @@ int deal_key(int key_code, t_game *game)
 		game->val.plane.y = old_planeX * sin(game->val.rot_speed) + game->val.plane.y * cos(game->val.rot_speed);
 	}
 	g_key_1();
-	// printf("x : %lf , ", game->val.pos.x);
-	// printf("y : %lf\n", game->val.pos.y);
 	return (0);
 }

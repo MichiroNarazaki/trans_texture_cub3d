@@ -66,10 +66,8 @@ typedef struct s_new_val
 	int texNum;
 	double texPos;
 	double step;
-	int side;
-	// int texture[8][texHeight * texWidth];
+	int side;//was a NS or a EW wall hit?
 	int *texture[8];
-	// uint32_t buffer[screenWidth][screenHeight];
 	int buffer[WIDTH][HEIGHT];
 	int color;
 	double wallX;
@@ -113,7 +111,7 @@ typedef struct s_game
 
 void cal_and_init(t_val *val);
 int ret_color(t_val *val);
-void dda(t_val *val,int *side,int *hit);
+void dda(t_game *game,int *hit);
 int deal_key(int key_code, t_game *game);
 void main_hook(t_game *game);
 int	map_value(int y, int x);
@@ -125,10 +123,9 @@ void	main_hook_init(t_game *game);
 /*new↓*/
 void buff(t_game *game,int w,int h);
 void draw_buffer(t_game *game);
-void get_texX(t_game *game, int *side);
-void get_wallX(t_game *game,int *side,double *perpWallDist);
-// void y_tex(t_game *game,int x,t_start_end *y);
-void y_tex(t_game *game,int x,t_start_end *y,int *side);
+void get_texX(t_game *game);
+void get_wallX(t_game *game,double *perpWallDist);
+void y_tex(t_game *game,int x,t_start_end *y);
 void load_img(t_game *game);
 
 

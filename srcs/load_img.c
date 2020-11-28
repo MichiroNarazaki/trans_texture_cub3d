@@ -11,7 +11,6 @@ void load_img(t_game *game)
 	j = 0;
 	while (texture_name[j])
 	{
-		// printf("%d\n",j);
 		fd = open(texture_name[j], O_RDONLY);
 		close(fd);
 		if (fd < 0)
@@ -28,8 +27,5 @@ void load_img(t_game *game)
 		game->new_val.texture[j] = (int *)mlx_get_data_addr(other_img.img, &other_img.bpp, &other_img.size_l, &other_img.endian);
 		j++;
 		free(other_img.img);
-		// free(game->new_val.texture[j]);
 	}
 }
-
-// game->new_val.texture[j] = (int *)mlx_get_data_addr(other_img.img, &other_img.bpp, &other_img.size_l, &other_img.endian);

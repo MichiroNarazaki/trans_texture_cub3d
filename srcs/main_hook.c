@@ -18,15 +18,11 @@ void main_hook(t_game *game)
 	int x;
 	double perpWallDist;
 	int hit;  //was there a wall hit?
-	int side; //was a NS or a EW wall hit?
 	double cameraX;
 	double frameTime;
 	int lineHeight;
 	t_start_end y;
 
-	/*new-------------(start)*/
-	// double wallX; //where exactly the wall was hit
-	/*new-------------(end)*/
 
 	x = 0;
 	for (x = 0; x < w; x++)
@@ -46,15 +42,15 @@ void main_hook(t_game *game)
 		//calculate step and initial sideDist
 		cal_and_init(&game->val);
 		//perform DDA
-		dda(&game->val, &side, &hit);
-		if (side == 0)
+		dda(game, &hit);
+		if (game->new_val.side == 0)
 			perpWallDist = (game->val.map.x - game->val.pos.x + (1 - game->val.step.x) / 2) / game->val.ray_dir.x;
 		else
 			perpWallDist = (game->val.map.y - game->val.pos.y + (1 - game->val.step.y) / 2) / game->val.ray_dir.y;
 
 		/***************************************************************/
 		//Calculate height of line to draw on screen
-	//壁の高さ = ウィンドウの高さ / 距離
+		//壁の高さ = ウィンドウの高さ / 距離
 		lineHeight = (int)(h / perpWallDist);
 
 		//calculate lowest and highest pixel to fill in current stripe
@@ -70,12 +66,13 @@ void main_hook(t_game *game)
 		//texturing calculations
 		game->new_val.texNum = map_value(game->val.map.y, game->val.map.x) - 1; //1 subtracted from it so that texture 0 can be used!
 
-		get_wallX(game, &side, &perpWallDist);
+		get_wallX(game, &perpWallDist);
 
-		get_texX(game, &side);
+		get_texX(game);
 		game->new_val.step = 1.0 * texHeight / lineHeight;
 		game->new_val.texPos = (y.start - h / 2 + lineHeight / 2) * game->new_val.step;
-		y_tex(game, x, &y,&side);
+		y_tex(game, x, &y);
+		// y_tex(game, x, &y, &side);
 	}
 
 	frameTime = 0.1;
