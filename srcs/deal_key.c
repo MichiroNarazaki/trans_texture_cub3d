@@ -7,7 +7,7 @@ int deal_key(int key_code, t_game *game)
 
 	if (key_code == KEY_ESC)
 		exit(0);
-	else if (key_code == KEY_W)
+	else if (key_code == KEY_W || key_code == KEY_FRONT)
 	{
 		printf("w\n");
 		if (map_value((int)(game->val.pos.y), (int)(game->val.pos.x + game->val.dir.x * game->val.move_speed)) == 0)
@@ -15,7 +15,7 @@ int deal_key(int key_code, t_game *game)
 		if (map_value((int)(game->val.pos.y + game->val.dir.y * game->val.move_speed), (int)(game->val.pos.x)) == 0)
 			game->val.pos.y += game->val.dir.y * game->val.move_speed;
 	}
-	else if (key_code == KEY_S)
+	else if (key_code == KEY_S || key_code == KEY_BACK)
 	{
 		printf("s\n");
 		if (map_value((int)(game->val.pos.y), (int)(game->val.pos.x - game->val.dir.x * game->val.move_speed)) == 0)
@@ -23,7 +23,7 @@ int deal_key(int key_code, t_game *game)
 		if (map_value((int)(game->val.pos.y - game->val.dir.y * game->val.move_speed), (int)(game->val.pos.x)) == 0)
 			game->val.pos.y -= game->val.dir.y * game->val.move_speed;
 	}
-	else if (key_code == KEY_A)
+	else if (key_code == KEY_A || key_code == KEY_LEFT)
 	{
 		printf("a\n");
 		//both camera direction and camera plane must be rotated
@@ -34,7 +34,7 @@ int deal_key(int key_code, t_game *game)
 		game->val.plane.x = game->val.plane.x * cos(-game->val.rot_speed) - game->val.plane.y * sin(-game->val.rot_speed);
 		game->val.plane.y = old_planeX * sin(-game->val.rot_speed) + game->val.plane.y * cos(-game->val.rot_speed);
 	}
-	else if (key_code == KEY_D)
+	else if (key_code == KEY_D || key_code == KEY_RIGHT)
 	{
 		printf("d\n");
 		//both camera direction and camera plane must be rotated

@@ -11,10 +11,15 @@
 #define texHeight 64
 
 #define KEY_ESC 65307
-#define KEY_W 126 //上
-#define KEY_A 123 //左
-#define KEY_S 125 //下
-#define KEY_D 124 //右
+#define KEY_W 13 //上
+#define KEY_A 0 //左
+#define KEY_S 1 //下
+#define KEY_D 2 //右
+
+#define KEY_FRONT 126 //上
+#define KEY_LEFT 123 //左
+#define KEY_BACK 125 //下
+#define KEY_RIGHT 124 //右
 
 #define X_EVENT_KEY_PRESS 2
 #define X_EVENT_KEY_EXIT 17 //Exit program key code

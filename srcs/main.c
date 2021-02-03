@@ -34,9 +34,8 @@ void img_init(t_game *game)
 
 int main_loop(t_game *game)
 {
-	if (g_key_flag == 1) //g_key_flagって何?
+	if (g_key_flag == 1)
 	{
-		//	描画する
 		main_hook(game);
 		mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 	}
