@@ -1,4 +1,4 @@
-#include "../../cub_git/mms/mlx.h"
+#include "path/to/mms/mlx.h"
 #include "../includes/main.h"
 
 int g_key_flag = 1;

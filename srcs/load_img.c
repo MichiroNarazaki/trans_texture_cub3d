@@ -1,4 +1,4 @@
-#include "../../cub_git/mms/mlx.h"
+#include "path/to/mms/mlx.h"
 #include "../includes/main.h"
 
 void load_img(t_game *game)
