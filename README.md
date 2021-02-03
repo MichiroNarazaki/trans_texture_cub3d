@@ -14,3 +14,12 @@
 12. cd ../../trans_texture_cub3d/
 13. make
 14. ./translate.a
+
+# How to move 
+
+Directional pad　or wasd key
+
+# Notice
+
+The key binds are for Mac.So If you use other machine,you should rewrite key bind in includes.
+Thank you.
