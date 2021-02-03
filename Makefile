@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = translate.a
-OPTIONS = -L../cub_git/opengl -lmlx -framework OpenGL -framework AppKit
+OPTIONS = -L<opengl_path> -lmlx -framework OpenGL -framework AppKit
 SOURCES =	srcs/cal_and_init.c\
 			srcs/dda.c \
 			srcs/deal_key.c \
