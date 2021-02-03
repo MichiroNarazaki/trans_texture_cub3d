@@ -6,8 +6,11 @@
 4. fix path and esc -> :q to save
 5. vim trans_texture_cub3d/srcs/main.c 
 6. fix path and esc -> :q to save
-7. cd mms_and_opengl/mms
+7. cd mms_and_opengl/opengl
 8. make
-9. mv libmlx.dylib ../../trans_texture_cub3d/
+9. cd ../mms
 10. make
-11. ./translate.a
+11. mv libmlx.dylib ../../trans_texture_cub3d/
+12. cd ../../trans_texture_cub3d/
+13. make
+14. ./translate.a
